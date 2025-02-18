@@ -1,0 +1,52 @@
+.project-card-view {
+    background: linear-gradient(145deg, #1e1e2f, #25253a);
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #191927, -5px -5px 10px #292947;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .project-card-view:hover {
+    transform: scale(1.02);
+    box-shadow: 8px 8px 15px #191927, -8px -8px 15px #292947;
+  }
+  
+  .project-card-view .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .project-card-view .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a683e3;
+  }
+  
+  .project-card-view .card-text {
+    font-size: 16px;
+    color: #ddd;
+    text-align: left;
+  }
+  
+  .project-card-view .weather-info {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 5px;
+  }
+  
+  .project-card-view .action-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .project-card-view .action-buttons button {
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .project-card-view .action-buttons button:hover {
+    transform: scale(1.1);
+  }
+  
