@@ -33,12 +33,13 @@ const AchievementCard: React.FC<Props> = ({ id, title, description, temperature,
             <div style={{textAlign:"left"}}>💧 : {humidity}</div>
           </Col>
           <Col md={2} className="project-card" style={{display:"flex",alignItems:"center"}}>
-          <Button variant="warning" onClick={() => dispatch(deleteAchievement(id))}>
+          <Button variant="warning" onClick={onEdit}>
               <CiEdit  />
             </Button>
             <Button
               variant="danger"
               style={{ marginLeft: "10px" }}
+              onClick={() => dispatch(deleteAchievement(id))}
             >
               <MdDeleteOutline />
             </Button>

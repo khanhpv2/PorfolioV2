@@ -8,7 +8,7 @@ import { RootState } from "../../store/store";
 const Achievements = () => {
   const achievements = useSelector((state: RootState) => state.achievements);
   const [showModal, setShowModal] = useState(false);
-  const [editingAchievement, setEditingAchievement] = useState(null);
+  const [editingAchievement, setEditingAchievement] = useState<any>(null);
 
   return (
     <Container fluid className="project-section">
