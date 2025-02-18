@@ -1,10 +1,9 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { deleteAchievement } from "../../store/achievementSlice";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
-import "../../styles/AchievementCard.css"; // Import CSS
 
 interface Props {
   id: number;
@@ -20,21 +19,32 @@ const AchievementCard: React.FC<Props> = ({ id, title, description, temperature,
 
   return (
     <Card className="project-card-view">
+     
       <Card.Body>
-        <div>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <div className="weather-info">🌡️ {temperature}</div>
-          <div className="weather-info">💧 {humidity}</div>
-        </div>
-        <div className="action-buttons">
-          <Button variant="warning" onClick={onEdit}>
-            <CiEdit />
-          </Button>
-          <Button variant="danger" style={{ marginLeft: "10px" }} onClick={() => dispatch(deleteAchievement(id))}>
-            <MdDeleteOutline />
-          </Button>
-        </div>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={2} className="project-card">
+            <Card.Title>{title}</Card.Title>
+          </Col>
+          <Col md={8} className="project-card">
+            <Card.Text style={{ textAlign: "justify" }}>
+              {description}
+            </Card.Text>
+            <div style={{textAlign:"left"}}>🌡️ : {temperature}</div>
+            <div style={{textAlign:"left"}}>💧 : {humidity}</div>
+          </Col>
+          <Col md={2} className="project-card" style={{display:"flex",alignItems:"center"}}>
+          <Button variant="warning" onClick={() => dispatch(deleteAchievement(id))}>
+              <CiEdit  />
+            </Button>
+            <Button
+              variant="danger"
+              style={{ marginLeft: "10px" }}
+            >
+              <MdDeleteOutline />
+            </Button>
+          </Col>
+
+        </Row>
       </Card.Body>
     </Card>
   );

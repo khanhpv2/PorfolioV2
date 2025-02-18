@@ -11,10 +11,12 @@ const Achievements = () => {
   const [editingAchievement, setEditingAchievement] = useState(null);
 
   return (
-    <Container>
-      <h1>Achievements</h1>
+    <Container fluid className="project-section">
+      <h1 className="project-heading">
+        <strong className="purple">Achivement </strong>
+      </h1>
       <Button onClick={() => setShowModal(true)}>Add Achievement</Button>
-      <Row style={{padding:"50px 0"}}>
+      <Row style={{ padding: "50px 0" }}>
         {achievements.map((ach) => (
           <AchievementCard key={ach.id} {...ach} onEdit={() => { setEditingAchievement(ach); setShowModal(true); }} />
         ))}
